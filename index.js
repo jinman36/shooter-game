@@ -6,7 +6,8 @@ canvas.width = innerWidth
 canvas.height = innerHeight
 
 const scoreEl= document.querySelector('#scoreEl')
-
+const startGameButton = document.querySelector ('#startGameButton')
+const modalEl = document.querySelector ('#modalEl')
 
 class Player {
     constructor(x, y, radius, color) {
@@ -235,6 +236,8 @@ addEventListener('click', (event) => {
     )
 })
 
-
-animate()
-spawnEnemies()
+startGameButton.addEventListener ('click', () => {
+    animate()
+    spawnEnemies()
+    modalEl.style.display = 'none'
+})
